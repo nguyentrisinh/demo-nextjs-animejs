@@ -1,0 +1,64 @@
+/* Your own custom utilities */
+ul.tree {
+	margin: 0;
+	padding: 2px 20px;
+	li {
+		list-style: none;
+		margin-left: -15px;
+		position: relative;
+    
+    
+		input {
+			cursor: pointer;
+			height: 1em;
+			left: 0;
+			margin-left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			width: 2em;
+			z-index: 2;
+			&:checked+ul {
+				height: auto;
+				margin: 0px 0px 0px -19px;
+				&:before {
+					content: "-"; //MINUS
+					font-size: 15px;
+					left: 0;
+					margin-right: 5px;
+					position: absolute;
+					top: 0;
+				}
+			}
+			&:checked+ul>li {
+				display: block;
+				left: -3px;
+				margin: 0 0 3px;
+				last-child {
+					margin: 0 0 .063em;
+				}
+			}
+		}
+		input+ul {
+			padding: 0 0 0 39px;
+			&:before {
+				content: "+"; //PLUS
+				font-size: 15px;
+				left: 0;
+				margin-right: 5px;
+				position: absolute;
+				top: 0;
+			}
+		}
+		input+ul>li {
+			display: none;
+			margin-left: -10px;
+			padding-left: 1px;
+		}
+		label {
+			cursor: pointer;
+			margin-bottom: 0;
+			margin-left: 17px;
+		}
+	}
+}

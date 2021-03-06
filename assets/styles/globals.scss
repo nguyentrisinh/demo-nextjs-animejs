@@ -1,0 +1,196 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+.btn-blue {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.bottom-2 {
+  bottom: 2rem;
+}
+.right-2 {
+  right: 2rem;
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+// Logo
+$slate: #3f3c3c;
+$blue: #00b4ff;
+@function rem($px, $base: 16) {
+    @return #{$px/$base}rem;
+}
+.site-logo {
+    display: flex;
+    align-items: center;
+    transform: translateZ(0);
+
+    #logo {
+        position: relative;
+        flex: 0 0 rem(60);
+        width: rem(60);
+        z-index: 2;
+        polygon {
+            transform-origin: 50%;
+        }
+        circle {
+            transform-origin: 80% 80%;
+        }
+    }
+
+    .site-title {
+        position: relative;
+        overflow: hidden;
+        margin-left: rem(-24);
+        z-index: 1;
+        transform: translateZ(0);
+
+        &__text {
+            padding: rem(4) rem(6) rem(4) rem(28);
+            color: $slate;
+            font-size: rem(32);
+            font-weight: 800;
+            span {
+                margin-left: rem(0.25);
+                color: $blue;
+            }
+        }
+    }
+}
+
+
+// Anime Logo
+.main-logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+
+    .logo-animation {
+        position: relative;
+        width: 100%;
+        padding-bottom: 12%;
+
+        &__wrapper {
+            pointer-events: none;
+            overflow: visible;
+            display: flex;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1000px;
+            height: 240px;
+            margin: -120px 0 0 -500px;
+            
+            .anime-logo {
+                overflow: visible;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 1000px;
+                height: 120px;
+
+                &__signs {
+                    overflow: visible;
+                    display: flex;
+                    align-items: flex-end;
+                    position: relative;
+                    width: 100%;
+                    height: 512px;
+                    margin-top: -352px;
+
+                    .logo-letter {
+                        display: flex;
+                        align-items: flex-end;
+                        overflow: hidden;
+                        height: 100%;
+
+                        svg {
+                            overflow: visible;
+                            fill: none;
+                            fill-rule: evenodd;
+                        }
+                    }
+
+                    .bounced {
+                        transform-origin: 50% 100% 0px;
+                        transform: translateY(200px) scaleX(0.55) scaleY(0.8);
+                    }
+                    .bounce {
+                        overflow: visible;
+                        position: absolute;
+                        left: 0;
+                        bottom: 70px;
+                        /*      stroke: red;*/
+                    }
+
+                    .dot {
+                        opacity: 0.001;
+                        position: absolute;
+                        z-index: 10;
+                        top: 0;
+                        left: 0;
+                        width: 40px;
+                        height: 40px;
+                        margin: -20px 0 0 -20px;
+                        background-color: currentColor;
+                        transform: translate3d(0, 0, 0);
+                    }
+
+                    .line {
+                        stroke-linecap: square;
+                        stroke-width: 40;
+                        stroke: currentColor;
+                    }
+
+                    .fill {
+                        opacity: 0.001;
+                        stroke: currentColor;
+                        stroke-width: 40px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+// Svg illustration
+
+#card1_bg-white,
+#card2_bg-white,
+#card3_bg-white,
+#card4_bg-white {
+    transform-origin: 2% 8%;
+    transform-style: preserve-3D;
+}
+#card3_bg-white,
+#card4_bg-white,
+#card5_bg-white {
+    transform: scale(0);
+}
+#plane1 {
+    transform-origin: 620px 580px;
+    opacity: 0;
+}
+#plane2 {
+    transform: scaleX(-1) translate(-1500px, -150px);
+    transform-origin: 500px 650px;
+    opacity: 0;
+}
